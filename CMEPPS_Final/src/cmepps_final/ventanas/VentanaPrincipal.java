@@ -3,7 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cmepps_final;
+package cmepps_final.ventanas;
+
+import cmepps_final.elementos.Elemento;
+import java.util.ArrayList;
+import javax.swing.WindowConstants;
 
 /**
  *
@@ -14,6 +18,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
+    ArrayList<Elemento> elementos = new ArrayList<Elemento>();
     public VentanaPrincipal() {
         initComponents();
     }
@@ -29,24 +34,48 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         jMenuBar1 = new javax.swing.JMenuBar();
         menuElementos = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
+        itemListado = new javax.swing.JMenuItem();
+        itemPFNA = new javax.swing.JMenuItem();
+        itemCaracteristicas = new javax.swing.JMenuItem();
+        itemPFA = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        menuElementos.setText("Elementos");
+        menuElementos.setText("Menú");
         menuElementos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 menuElementosActionPerformed(evt);
             }
         });
+
+        itemListado.setText("Menú elementos");
+        itemListado.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListadoActionPerformed(evt);
+            }
+        });
+        menuElementos.add(itemListado);
+
+        itemPFNA.setText("Cálculo PFNA");
+        itemPFNA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPFNAActionPerformed(evt);
+            }
+        });
+        menuElementos.add(itemPFNA);
+
+        itemCaracteristicas.setText("Características generales");
+        itemCaracteristicas.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemCaracteristicasActionPerformed(evt);
+            }
+        });
+        menuElementos.add(itemCaracteristicas);
+
+        itemPFA.setText("Cálculo PFA");
+        menuElementos.add(itemPFA);
+
         jMenuBar1.add(menuElementos);
-
-        jMenu2.setText("Complejidad");
-        jMenuBar1.add(jMenu2);
-
-        jMenu3.setText("Cálculo PFNA");
-        jMenuBar1.add(jMenu3);
 
         setJMenuBar(jMenuBar1);
 
@@ -70,6 +99,21 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         ve.setVisible(true);
         ve.setLocationRelativeTo(null);
     }//GEN-LAST:event_menuElementosActionPerformed
+
+    private void itemListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoActionPerformed
+        // TODO add your handling code here:
+        VentanaElementos ve = new VentanaElementos();
+        ve.setVisible(true);
+        ve.setLocationRelativeTo(null);
+    }//GEN-LAST:event_itemListadoActionPerformed
+
+    private void itemPFNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPFNAActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemPFNAActionPerformed
+
+    private void itemCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCaracteristicasActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemCaracteristicasActionPerformed
 
     /**
      * @param args the command line arguments
@@ -107,8 +151,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenuItem itemCaracteristicas;
+    private javax.swing.JMenuItem itemListado;
+    private javax.swing.JMenuItem itemPFA;
+    private javax.swing.JMenuItem itemPFNA;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JMenu menuElementos;
     // End of variables declaration//GEN-END:variables

@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cmepps_final;
+package cmepps_final.ventanas;
+
+import javax.swing.WindowConstants;
 
 /**
  *
  * @author Pablo
  */
-public class VentanaPFA extends javax.swing.JFrame {
+public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
 
     /**
-     * Creates new form VentanaPFA
+     * Creates new form VentanaCaracteristicasGenerales
      */
-    public VentanaPFA() {
+    public VentanaCaracteristicasGenerales() {
         initComponents();
+        this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
     }
 
     /**
@@ -60,20 +63,20 @@ public class VentanaPFA extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(VentanaPFA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCaracteristicasGenerales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(VentanaPFA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCaracteristicasGenerales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(VentanaPFA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCaracteristicasGenerales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(VentanaPFA.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(VentanaCaracteristicasGenerales.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPFA().setVisible(true);
+                new VentanaCaracteristicasGenerales().setVisible(true);
             }
         });
     }
