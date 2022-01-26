@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package cmepps_final.elementos;
+package cmepps_final.variabs;
 
 /**
  *
@@ -16,13 +16,15 @@ public class Elemento {
     int nFichRefSalidas;
     int nDatosEntradas;
     int nDatosSalidas;
-
-    public Elemento(String nombre, int nFichRefEntradas, int nFichRefSalidas, int nDatosEntradas, int nDatosSalidas) {
+    String tipo;
+    
+    public Elemento(String nombre, int nFichRefEntradas, int nFichRefSalidas, int nDatosEntradas, int nDatosSalidas, String tipo) {
         this.nombre = nombre;
         this.nFichRefEntradas = nFichRefEntradas;
         this.nFichRefSalidas = nFichRefSalidas;
         this.nDatosEntradas = nDatosEntradas;
         this.nDatosSalidas = nDatosSalidas;
+        this.tipo = tipo;
     }
     
     

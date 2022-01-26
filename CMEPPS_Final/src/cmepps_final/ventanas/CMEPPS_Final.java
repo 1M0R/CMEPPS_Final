@@ -6,7 +6,7 @@ package cmepps_final.ventanas;
  * and open the template in the editor.
  */
 
-import cmepps_final.elementos.Elemento;
+import cmepps_final.variabs.Elemento;
 import javax.swing.WindowConstants;
 import cmepps_final.ventanas.VentanaPrincipal;
 import java.util.ArrayList;
@@ -19,10 +19,11 @@ public class CMEPPS_Final {
      */
     
     
+    static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
     
     public static void main(String[] args) {
         // TODO code application logic here
-        VentanaPrincipal vp = new VentanaPrincipal();
+        VentanaPrincipal vp = new VentanaPrincipal(elementos);
         vp.setVisible(true);
         vp.setLocationRelativeTo(null);
         

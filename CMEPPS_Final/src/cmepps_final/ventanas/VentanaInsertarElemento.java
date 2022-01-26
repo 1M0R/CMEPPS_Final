@@ -5,7 +5,7 @@
  */
 package cmepps_final.ventanas;
 
-import cmepps_final.elementos.Elemento;
+import cmepps_final.variabs.Elemento;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.WindowConstants;
@@ -19,9 +19,11 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
     /**
      * Creates new form VentanaInsertarElemento
      */
-    public VentanaInsertarElemento() {
+    static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+    public VentanaInsertarElemento(ArrayList<Elemento> elementos) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.elementos = elementos;
         
     }
 
@@ -29,7 +31,9 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
         
         Elemento e = new Elemento(textNombre.getText(), parseInt(textEntradas.getText()), 
                 parseInt(textEntradas2.getText()), parseInt(textSalidas.getText()),
-                parseInt(textSalidas2.getText()));
+                parseInt(textSalidas2.getText()), (String) comboTipo.getSelectedItem());
+        
+        elementos.add(e);
         
     }
     /**
@@ -84,6 +88,11 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
         labelSalidas.setText("salidas");
 
         buttonInsertar.setText("INSERTAR");
+        buttonInsertar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonInsertarActionPerformed(evt);
+            }
+        });
 
         labelSalidas2.setText("salidas");
 
@@ -173,6 +182,12 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
         actualizarTipo();
     }//GEN-LAST:event_comboTipoActionPerformed
 
+    private void buttonInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInsertarActionPerformed
+        // TODO add your handling code here:
+        insertarElemento();
+        
+    }//GEN-LAST:event_buttonInsertarActionPerformed
+
     private void actualizarTipo() {
         String tipo = (String) comboTipo.getSelectedItem();
         switch (tipo) {
@@ -231,7 +246,7 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaInsertarElemento().setVisible(true);
+                new VentanaInsertarElemento(elementos).setVisible(true);
             }
         });
     }

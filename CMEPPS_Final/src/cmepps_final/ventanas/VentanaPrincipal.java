@@ -5,7 +5,7 @@
  */
 package cmepps_final.ventanas;
 
-import cmepps_final.elementos.Elemento;
+import cmepps_final.variabs.Elemento;
 import java.util.ArrayList;
 import javax.swing.WindowConstants;
 
@@ -18,9 +18,10 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    ArrayList<Elemento> elementos = new ArrayList<Elemento>();
-    public VentanaPrincipal() {
+    static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+    public VentanaPrincipal(ArrayList<Elemento> elementos) {
         initComponents();
+        this.elementos = elementos;
     }
 
     /**
@@ -95,14 +96,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void menuElementosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuElementosActionPerformed
         // TODO add your handling code here:
-        VentanaElementos ve = new VentanaElementos();
+        VentanaElementos ve = new VentanaElementos(elementos);
         ve.setVisible(true);
         ve.setLocationRelativeTo(null);
     }//GEN-LAST:event_menuElementosActionPerformed
 
     private void itemListadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListadoActionPerformed
         // TODO add your handling code here:
-        VentanaElementos ve = new VentanaElementos();
+        VentanaElementos ve = new VentanaElementos(elementos);
         ve.setVisible(true);
         ve.setLocationRelativeTo(null);
     }//GEN-LAST:event_itemListadoActionPerformed
@@ -145,7 +146,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal().setVisible(true);
+                new VentanaPrincipal(elementos).setVisible(true);
             }
         });
     }

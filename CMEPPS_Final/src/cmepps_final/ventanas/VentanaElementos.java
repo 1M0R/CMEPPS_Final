@@ -5,7 +5,7 @@
  */
 package cmepps_final.ventanas;
 
-import cmepps_final.elementos.Elemento;
+import cmepps_final.variabs.Elemento;
 import java.util.ArrayList;
 import javax.swing.WindowConstants;
 
@@ -18,10 +18,11 @@ public class VentanaElementos extends javax.swing.JFrame {
     /**
      * Creates new form VentanaElementos
      */
-    
-    public VentanaElementos() {
+    static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
+    public VentanaElementos(ArrayList<Elemento> elementos) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.elementos = elementos;
         
     }
 
@@ -37,7 +38,7 @@ public class VentanaElementos extends javax.swing.JFrame {
         buttonInsertar = new javax.swing.JButton();
         buttonBorrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaElementos = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -55,26 +56,7 @@ public class VentanaElementos extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null},
-                {null, null, null, null, null}
-            },
-            new String [] {
-                "Nombre", "Tipo", "Referencias", "Datos elementales", "Complejidad"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaElementos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -107,7 +89,7 @@ public class VentanaElementos extends javax.swing.JFrame {
 
     private void buttonInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInsertarActionPerformed
         // TODO add your handling code here:
-        VentanaInsertarElemento vie = new VentanaInsertarElemento();
+        VentanaInsertarElemento vie = new VentanaInsertarElemento(elementos);
         vie.setVisible(true);
         vie.setLocationRelativeTo(null);
     }//GEN-LAST:event_buttonInsertarActionPerformed
@@ -146,7 +128,7 @@ public class VentanaElementos extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaElementos().setVisible(true);
+                new VentanaElementos(elementos).setVisible(true);
             }
             
         });
@@ -156,6 +138,6 @@ public class VentanaElementos extends javax.swing.JFrame {
     private javax.swing.JButton buttonBorrar;
     private javax.swing.JButton buttonInsertar;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaElementos;
     // End of variables declaration//GEN-END:variables
 }
