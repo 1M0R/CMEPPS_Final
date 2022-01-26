@@ -16,6 +16,9 @@ public class CMEPPS_Final {
      */
     public static void main(String[] args) {
         // TODO code application logic here
+        VentanaPrincipal vp = new VentanaPrincipal();
+        vp.setVisible(true);
+        vp.setLocationRelativeTo(null);
     }
     
 }
