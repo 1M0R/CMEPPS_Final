@@ -27,6 +27,7 @@ public class VentanaElementos extends javax.swing.JFrame {
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.elementos = elementos;
         CrearModelo2();
+        llenarTabla(elementos);
         
     }
     
@@ -67,14 +68,24 @@ public class VentanaElementos extends javax.swing.JFrame {
     void llenarTabla(ArrayList<Elemento> elementos){
         Object O[]=null;
         for (int i = 0; i < elementos.size(); i++) {
-        modelo2.addRow(O);
-        Elemento e = elementos.get(i);
-        modelo2.setValueAt(e.getNombre(), i, 0);
-        modelo2.setValueAt(e.getNombre(), i, 1);
-        modelo2.setValueAt(e.getnDatosEntradas(), i, 2);
-        modelo2.setValueAt(e.getnFichRefEntradas(), i, 3);
-        modelo2.setValueAt(e.getnFichRefEntradas(), i, 3);
- }
+            modelo2.addRow(O);
+            Elemento e = elementos.get(i);
+            if (e.getTipo() == "CE") {
+                modelo2.setValueAt(e.getNombre(), i, 0);
+                modelo2.setValueAt(e.getTipo(), i, 1);
+                modelo2.setValueAt("Entradas: " + e.getnFichRefEntradas() + "\n Salidas: "+ e.getnFichRefSalidas(), i, 2);
+                modelo2.setValueAt("Entradas: " + e.getnDatosEntradas()+ "\n Salidas: "+ e.getnDatosSalidas(), i, 3);
+                modelo2.setValueAt("SIMPLE", i, 4);
+            }
+            else{
+                modelo2.setValueAt(e.getNombre(), i, 0);
+                modelo2.setValueAt(e.getTipo(), i, 1);
+                modelo2.setValueAt(e.getnFichRefEntradas(), i, 2);
+                modelo2.setValueAt(e.getnDatosEntradas(), i, 3);
+                modelo2.setValueAt("SIMPLE", i, 4);
+            }
+        }
+        tablaElementos.setModel(modelo2);
     }
     /**
      * This method is called from within the constructor to initialize the form.
@@ -89,6 +100,7 @@ public class VentanaElementos extends javax.swing.JFrame {
         buttonBorrar = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaElementos = new javax.swing.JTable();
+        buttonActualizar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -124,6 +136,13 @@ public class VentanaElementos extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(tablaElementos);
 
+        buttonActualizar.setText("Actualizar");
+        buttonActualizar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonActualizarActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -131,9 +150,11 @@ public class VentanaElementos extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 484, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 715, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(buttonInsertar)
+                        .addGap(199, 199, 199)
+                        .addComponent(buttonActualizar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(buttonBorrar)))
                 .addContainerGap())
@@ -143,10 +164,11 @@ public class VentanaElementos extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGap(19, 19, 19)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 256, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(buttonInsertar)
-                    .addComponent(buttonBorrar))
+                    .addComponent(buttonBorrar)
+                    .addComponent(buttonActualizar))
                 .addContainerGap())
         );
 
@@ -163,6 +185,12 @@ public class VentanaElementos extends javax.swing.JFrame {
     private void buttonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBorrarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonBorrarActionPerformed
+
+    private void buttonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActualizarActionPerformed
+        // TODO add your handling code here:
+        CrearModelo2();
+        llenarTabla(elementos);
+    }//GEN-LAST:event_buttonActualizarActionPerformed
 
     
     
@@ -204,6 +232,7 @@ public class VentanaElementos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton buttonActualizar;
     private javax.swing.JButton buttonBorrar;
     private javax.swing.JButton buttonInsertar;
     private javax.swing.JScrollPane jScrollPane1;
