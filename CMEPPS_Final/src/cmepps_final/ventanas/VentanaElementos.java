@@ -75,14 +75,14 @@ public class VentanaElementos extends javax.swing.JFrame {
                 modelo2.setValueAt(e.getTipo(), i, 1);
                 modelo2.setValueAt("Entradas: " + e.getnFichRefEntradas() + "\n Salidas: "+ e.getnFichRefSalidas(), i, 2);
                 modelo2.setValueAt("Entradas: " + e.getnDatosEntradas()+ "\n Salidas: "+ e.getnDatosSalidas(), i, 3);
-                modelo2.setValueAt("SIMPLE", i, 4);
+                modelo2.setValueAt(e.getComplejidad(), i, 4);
             }
             else{
                 modelo2.setValueAt(e.getNombre(), i, 0);
                 modelo2.setValueAt(e.getTipo(), i, 1);
                 modelo2.setValueAt(e.getnFichRefEntradas(), i, 2);
                 modelo2.setValueAt(e.getnDatosEntradas(), i, 3);
-                modelo2.setValueAt("SIMPLE", i, 4);
+                modelo2.setValueAt(e.getComplejidad(), i, 4);
             }
         }
         tablaElementos.setModel(modelo2);
@@ -183,7 +183,12 @@ public class VentanaElementos extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonInsertarActionPerformed
 
     private void buttonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBorrarActionPerformed
-        // TODO add your handling code here:
+    int selected = tablaElementos.getSelectedRow();
+        if(selected != -1){
+            elementos.remove(selected);
+            CrearModelo2();
+            llenarTabla(elementos);
+        }        // TODO add your handling code here:
     }//GEN-LAST:event_buttonBorrarActionPerformed
 
     private void buttonActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonActualizarActionPerformed
