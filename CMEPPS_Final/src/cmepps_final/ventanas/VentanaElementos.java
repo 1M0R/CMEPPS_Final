@@ -7,7 +7,10 @@ package cmepps_final.ventanas;
 
 import cmepps_final.variabs.Elemento;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JTable;
 import javax.swing.WindowConstants;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -23,9 +26,56 @@ public class VentanaElementos extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.elementos = elementos;
+        CrearModelo2();
         
     }
+    
+    static DefaultTableModel modelo2;
+    private void CrearModelo2(){
+        try {
+            modelo2 = (new DefaultTableModel(
+                null, new String [] {
+                "Nombre","Tipo", "Ficheros/Referencias","Datos elementales", "Complejidad"}){
+        Class[] types = new Class [] {
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class,
+            java.lang.String.class
+        };
 
+        boolean[] canEdit = new boolean [] {false,false,false,false, false};
+
+        @Override
+        public Class getColumnClass(int columnIndex) {
+            return types [columnIndex];
+        }
+
+        @Override
+        public boolean isCellEditable(int rowIndex, int colIndex){
+            return canEdit [colIndex];
+        }
+    });
+        
+    tablaElementos.setModel(modelo2);
+    
+        } catch (Exception e) {
+        JOptionPane.showMessageDialog(null,e.toString()+"error2");
+        }
+    }
+    
+    void llenarTabla(ArrayList<Elemento> elementos){
+        Object O[]=null;
+        for (int i = 0; i < elementos.size(); i++) {
+        modelo2.addRow(O);
+        Elemento e = elementos.get(i);
+        modelo2.setValueAt(e.getNombre(), i, 0);
+        modelo2.setValueAt(e.getNombre(), i, 1);
+        modelo2.setValueAt(e.getnDatosEntradas(), i, 2);
+        modelo2.setValueAt(e.getnFichRefEntradas(), i, 3);
+        modelo2.setValueAt(e.getnFichRefEntradas(), i, 3);
+ }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -56,6 +106,22 @@ public class VentanaElementos extends javax.swing.JFrame {
             }
         });
 
+        tablaElementos.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Tipo", "Ficheros/Referencias", "Datos elementales", "Complejidad"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.String.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+        });
         jScrollPane1.setViewportView(tablaElementos);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -98,6 +164,9 @@ public class VentanaElementos extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_buttonBorrarActionPerformed
 
+    
+    
+ 
     /**
      * @param args the command line arguments
      */
