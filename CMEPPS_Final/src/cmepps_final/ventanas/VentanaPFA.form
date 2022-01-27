@@ -23,13 +23,135 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="400" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <Component id="FA_texto_1" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label_SVA_variable" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
+                      <Component id="FA_texto_2" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label_FA_resultado" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace pref="176" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" attributes="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" attributes="0">
+                              <Component id="PFNA_texto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label_PFNA_valor" min="-2" pref="24" max="-2" attributes="0"/>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <Component id="PFA_texto" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label_PFNA_en_PFA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="PFA_texto2" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label_FA_en_PFA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="igual_PFA" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="label_resultado_PFA" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace max="32767" attributes="0"/>
+                  </Group>
+              </Group>
+          </Group>
       </Group>
     </DimensionLayout>
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
-          <EmptySpace min="0" pref="300" max="32767" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="77" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="label_PFNA_valor" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PFNA_texto" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="FA_texto_1" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_SVA_variable" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="FA_texto_2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_FA_resultado" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="PFA_texto" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_PFNA_en_PFA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="PFA_texto2" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_resultado_PFA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_FA_en_PFA" alignment="3" min="-2" max="-2" attributes="0"/>
+                  <Component id="igual_PFA" alignment="3" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace pref="154" max="32767" attributes="0"/>
+          </Group>
       </Group>
     </DimensionLayout>
   </Layout>
+  <SubComponents>
+    <Component class="javax.swing.JLabel" name="label_PFNA_valor">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_SVA_variable">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_FA_resultado">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.65"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_PFNA_en_PFA">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PFNA_texto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PFNA ="/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="FA_texto_1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="FA = 0.65 + (0.01 x"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="FA_texto_2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value=") ="/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PFA_texto">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="PFA ="/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="PFA_texto2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="x"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_resultado_PFA">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.00"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="label_FA_en_PFA">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="0.65"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="igual_PFA">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="="/>
+      </Properties>
+    </Component>
+  </SubComponents>
 </Form>

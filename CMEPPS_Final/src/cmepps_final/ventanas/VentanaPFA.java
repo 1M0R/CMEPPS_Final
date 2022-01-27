@@ -30,17 +30,103 @@ public class VentanaPFA extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_PFNA_valor = new javax.swing.JLabel();
+        label_SVA_variable = new javax.swing.JLabel();
+        label_FA_resultado = new javax.swing.JLabel();
+        label_PFNA_en_PFA = new javax.swing.JLabel();
+        PFNA_texto = new javax.swing.JLabel();
+        FA_texto_1 = new javax.swing.JLabel();
+        FA_texto_2 = new javax.swing.JLabel();
+        PFA_texto = new javax.swing.JLabel();
+        PFA_texto2 = new javax.swing.JLabel();
+        label_resultado_PFA = new javax.swing.JLabel();
+        label_FA_en_PFA = new javax.swing.JLabel();
+        igual_PFA = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        label_PFNA_valor.setText("0");
+
+        label_SVA_variable.setText("0");
+
+        label_FA_resultado.setText("0.65");
+
+        label_PFNA_en_PFA.setText("0");
+
+        PFNA_texto.setText("PFNA =");
+
+        FA_texto_1.setText("FA = 0.65 + (0.01 x");
+
+        FA_texto_2.setText(") =");
+
+        PFA_texto.setText("PFA =");
+
+        PFA_texto2.setText("x");
+
+        label_resultado_PFA.setText("0.00");
+
+        label_FA_en_PFA.setText("0.65");
+
+        igual_PFA.setText("=");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(43, 43, 43)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(FA_texto_1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_SVA_variable)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(FA_texto_2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_FA_resultado)
+                        .addContainerGap(176, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PFNA_texto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_PFNA_valor, javax.swing.GroupLayout.PREFERRED_SIZE, 24, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(PFA_texto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_PFNA_en_PFA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(PFA_texto2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_FA_en_PFA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(igual_PFA)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_resultado_PFA)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(77, 77, 77)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_PFNA_valor)
+                    .addComponent(PFNA_texto))
+                .addGap(10, 10, 10)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(FA_texto_1)
+                    .addComponent(label_SVA_variable)
+                    .addComponent(FA_texto_2)
+                    .addComponent(label_FA_resultado))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PFA_texto)
+                    .addComponent(label_PFNA_en_PFA)
+                    .addComponent(PFA_texto2)
+                    .addComponent(label_resultado_PFA)
+                    .addComponent(label_FA_en_PFA)
+                    .addComponent(igual_PFA))
+                .addContainerGap(154, Short.MAX_VALUE))
         );
 
         pack();
@@ -82,5 +168,17 @@ public class VentanaPFA extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel FA_texto_1;
+    private javax.swing.JLabel FA_texto_2;
+    private javax.swing.JLabel PFA_texto;
+    private javax.swing.JLabel PFA_texto2;
+    private javax.swing.JLabel PFNA_texto;
+    private javax.swing.JLabel igual_PFA;
+    private javax.swing.JLabel label_FA_en_PFA;
+    private javax.swing.JLabel label_FA_resultado;
+    private javax.swing.JLabel label_PFNA_en_PFA;
+    private javax.swing.JLabel label_PFNA_valor;
+    private javax.swing.JLabel label_SVA_variable;
+    private javax.swing.JLabel label_resultado_PFA;
     // End of variables declaration//GEN-END:variables
 }
