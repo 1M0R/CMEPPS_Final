@@ -29,11 +29,23 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
 
     public void insertarElemento(){
         
-        Elemento e = new Elemento(textNombre.getText(), parseInt(textEntradas.getText()), 
-                parseInt(textEntradas2.getText()), parseInt(textSalidas.getText()),
-                parseInt(textSalidas2.getText()), (String) comboTipo.getSelectedItem());
+        if(comboTipo.getSelectedIndex() == 2)
+        {
+            Elemento e = new Elemento(textNombre.getText(), parseInt(textEntradas.getText()), 
+                    parseInt(textEntradas2.getText()), parseInt(textSalidas.getText()),
+                    parseInt(textSalidas2.getText()), (String) comboTipo.getSelectedItem());
+            elementos.add(e);
+        }
+        else
+        {
+            Elemento e = new Elemento(textNombre.getText(), parseInt(textEntradas.getText()), 
+                     parseInt(textEntradas2.getText()), 0,
+                    0, (String) comboTipo.getSelectedItem());
+            
+            elementos.add(e);
+        }
         
-        elementos.add(e);
+        
         
     }
     /**
