@@ -31,11 +31,11 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
     private void initComponents() {
 
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaCaracteristicas = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaCaracteristicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"1", "Comunicación de datos", null},
                 {"2", "Funciones distribuídas", null},
@@ -65,7 +65,7 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaCaracteristicas);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -124,6 +124,6 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaCaracteristicas;
     // End of variables declaration//GEN-END:variables
 }
