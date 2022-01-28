@@ -16,9 +16,11 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
     /**
      * Creates new form VentanaCaracteristicasGenerales
      */
-    public VentanaCaracteristicasGenerales() {
+    static int totalCar = 0;
+    public VentanaCaracteristicasGenerales(int totalCar) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.totalCar = totalCar;
     }
 
     /**
@@ -32,60 +34,283 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaCaracteristicas = new javax.swing.JTable();
+        jComboBox14 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox2 = new javax.swing.JComboBox<>();
+        jComboBox3 = new javax.swing.JComboBox<>();
+        jComboBox4 = new javax.swing.JComboBox<>();
+        jComboBox5 = new javax.swing.JComboBox<>();
+        jComboBox6 = new javax.swing.JComboBox<>();
+        jComboBox7 = new javax.swing.JComboBox<>();
+        jComboBox8 = new javax.swing.JComboBox<>();
+        jComboBox9 = new javax.swing.JComboBox<>();
+        jComboBox10 = new javax.swing.JComboBox<>();
+        jComboBox11 = new javax.swing.JComboBox<>();
+        jComboBox12 = new javax.swing.JComboBox<>();
+        jComboBox13 = new javax.swing.JComboBox<>();
+        jLabel1 = new javax.swing.JLabel();
+        labelTotal = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         tablaCaracteristicas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1", "Comunicación de datos", null},
-                {"2", "Funciones distribuídas", null},
-                {"3", "Prestaciones", null},
-                {"4", "Gran uso de la configuración", null},
-                {"5", "Velocidad de las transacciones", null},
-                {"6", "Entrada de datos en línea", null},
-                {"7", "Diseño para la eficiencia del usuario final", null},
-                {"8", "Actualización de datos en línea", null},
-                {"9", "Complejidad del proceso lógico interno de la aplicación", null},
-                {"10", "Reusabilidad del código", null},
-                {"11", "Facilidad de instalación", null},
-                {"12", "Facilidad de operación", null},
-                {"13", "Localizaciones múltiples", null},
-                {"14", "Facilidad de cambios", null},
-                {"Total:", null, ""}
+                {"1", "Comunicación de datos"},
+                {"2", "Funciones distribuídas"},
+                {"3", "Prestaciones"},
+                {"4", "Gran uso de la configuración"},
+                {"5", "Velocidad de las transacciones"},
+                {"6", "Entrada de datos en línea"},
+                {"7", "Diseño para la eficiencia del usuario final"},
+                {"8", "Actualización de datos en línea"},
+                {"9", "Complejidad del proceso lógico interno de la aplicación"},
+                {"10", "Reusabilidad del código"},
+                {"11", "Facilidad de instalación"},
+                {"12", "Facilidad de operación"},
+                {"13", "Localizaciones múltiples"},
+                {"14", "Facilidad de cambios"}
             },
             new String [] {
-                "N", "Atributos", "Influencia"
+                "N", "Atributos"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, true
+                false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
                 return canEdit [columnIndex];
             }
         });
+        tablaCaracteristicas.setMaximumSize(new java.awt.Dimension(2147483647, 300));
+        tablaCaracteristicas.setPreferredSize(new java.awt.Dimension(150, 280));
+        tablaCaracteristicas.setRowHeight(20);
         jScrollPane1.setViewportView(tablaCaracteristicas);
+        if (tablaCaracteristicas.getColumnModel().getColumnCount() > 0) {
+            tablaCaracteristicas.getColumnModel().getColumn(0).setMaxWidth(25);
+        }
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 375, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(14, Short.MAX_VALUE)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 275, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-        );
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 330, 310));
+
+        jComboBox14.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox14.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox14.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox14ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox14, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 300, 40, -1));
+
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox1.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 40, 40, -1));
+
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox2.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox2ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 60, 40, -1));
+
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox3.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox3ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox3, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 80, 40, -1));
+
+        jComboBox4.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox4.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox4ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox4, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 40, -1));
+
+        jComboBox5.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox5.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox5ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox5, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 120, 40, -1));
+
+        jComboBox6.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox6.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox6ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox6, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 40, -1));
+
+        jComboBox7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox7.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox7ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox7, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 160, 40, -1));
+
+        jComboBox8.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox8.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox8ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox8, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 40, -1));
+
+        jComboBox9.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox9.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox9.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox9ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox9, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 200, 40, -1));
+
+        jComboBox10.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox10.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox10.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox10ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox10, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 40, -1));
+
+        jComboBox11.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox11.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox11.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox11ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox11, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 240, 40, -1));
+
+        jComboBox12.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox12.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox12.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox12ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox12, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 260, 40, -1));
+
+        jComboBox13.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "0", "1", "2", "3", "4", "5" }));
+        jComboBox13.setPreferredSize(new java.awt.Dimension(32, 15));
+        jComboBox13.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jComboBox13ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jComboBox13, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 280, 40, -1));
+
+        jLabel1.setText("TOTAL:");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 320, -1, -1));
+
+        labelTotal.setText("0");
+        getContentPane().add(labelTotal, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 320, 20, -1));
+
+        jLabel2.setText("Influencia       ");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 20, -1, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    public void calcularCaracteristicas(){
+        int total =  Integer.parseInt( (String) jComboBox1.getSelectedItem()) + 
+                Integer.parseInt( (String) jComboBox2.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox3.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox4.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox5.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox6.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox7.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox8.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox9.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox10.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox11.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox12.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox13.getSelectedItem()) + 
+                 Integer.parseInt( (String) jComboBox14.getSelectedItem());
+        
+             labelTotal.setText(""+total);
+             totalCar = total;
+                
+             VentanaPrincipal.totalCar = totalCar;
+    }
+    
+    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+        // TODO add your handling code here:
+        calcularCaracteristicas();
+    }//GEN-LAST:event_jComboBox1ActionPerformed
+
+    private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
+        calcularCaracteristicas();       // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox2ActionPerformed
+
+    private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox3ActionPerformed
+
+    private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox4ActionPerformed
+
+    private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox5ActionPerformed
+
+    private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox6ActionPerformed
+
+    private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox7ActionPerformed
+
+    private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox8ActionPerformed
+
+    private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox9ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox9ActionPerformed
+
+    private void jComboBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox10ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox10ActionPerformed
+
+    private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox11ActionPerformed
+
+    private void jComboBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox12ActionPerformed
+    calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox12ActionPerformed
+
+    private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox13ActionPerformed
+        calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox13ActionPerformed
+
+    private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
+        calcularCaracteristicas();        // TODO add your handling code here:
+    }//GEN-LAST:event_jComboBox14ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -117,13 +342,30 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaCaracteristicasGenerales().setVisible(true);
+                new VentanaCaracteristicasGenerales(totalCar).setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JComboBox<String> jComboBox1;
+    private javax.swing.JComboBox<String> jComboBox10;
+    private javax.swing.JComboBox<String> jComboBox11;
+    private javax.swing.JComboBox<String> jComboBox12;
+    private javax.swing.JComboBox<String> jComboBox13;
+    private javax.swing.JComboBox<String> jComboBox14;
+    private javax.swing.JComboBox<String> jComboBox2;
+    private javax.swing.JComboBox<String> jComboBox3;
+    private javax.swing.JComboBox<String> jComboBox4;
+    private javax.swing.JComboBox<String> jComboBox5;
+    private javax.swing.JComboBox<String> jComboBox6;
+    private javax.swing.JComboBox<String> jComboBox7;
+    private javax.swing.JComboBox<String> jComboBox8;
+    private javax.swing.JComboBox<String> jComboBox9;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel labelTotal;
     private javax.swing.JTable tablaCaracteristicas;
     // End of variables declaration//GEN-END:variables
 }

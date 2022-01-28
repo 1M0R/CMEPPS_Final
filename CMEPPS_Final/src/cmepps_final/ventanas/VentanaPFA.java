@@ -16,9 +16,24 @@ public class VentanaPFA extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPFA
      */
-    public VentanaPFA() {
+    static int PFNA = 0;
+    static int SVA = 0;
+    
+    public VentanaPFA(int PFNA, int SVA) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.PFNA = PFNA;
+        this.SVA = SVA;
+        label_PFNA_valor.setText(PFNA+"");
+        label_SVA_variable.setText(SVA+"");
+        double FA = 0.65 + (0.01 * SVA);
+        label_FA_resultado.setText(FA+"");
+        label_FA_en_PFA.setText(FA+"");
+        double PFA = FA * 0.65;
+        label_PFNA_en_PFA.setText(PFNA+"");
+        label_resultado_PFA.setText(PFA+"");
+        
+        
     }
 
     /**
@@ -162,7 +177,7 @@ public class VentanaPFA extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPFA().setVisible(true);
+                new VentanaPFA(PFNA, SVA).setVisible(true);
             }
         });
     }

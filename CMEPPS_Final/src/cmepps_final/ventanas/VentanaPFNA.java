@@ -22,10 +22,12 @@ public class VentanaPFNA extends javax.swing.JFrame {
      * Creates new form VentanaPFNA
      */
     static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
-    public VentanaPFNA(ArrayList<Elemento> elementos) {
+    static int PFNA = 0;
+    public VentanaPFNA(ArrayList<Elemento> elementos, int PFNA) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.elementos = elementos;
+        this.PFNA = PFNA;
         CrearModelo1();
         llenarTabla();
     }
@@ -56,7 +58,7 @@ public class VentanaPFNA extends javax.swing.JFrame {
             return canEdit [colIndex];
         }
     });
-      
+        
         tablaPFNA.setModel(modelo1);
 
             } catch (Exception e) {
@@ -115,13 +117,13 @@ public class VentanaPFNA extends javax.swing.JFrame {
         modelo1.setValueAt(totalFLE, 4, 4);
         
         modelo1.addRow(O);
-        modelo1.setValueAt(totalCE+totalEE+totalFLE+totalFLI+totalSE, 5, 4);
+        PFNA = totalCE+totalEE+totalFLE+totalFLI+totalSE;
+        modelo1.setValueAt(PFNA, 5, 4);
         
-        
-        
-        
+        VentanaPrincipal.PFNA = PFNA;
         
         tablaPFNA.setModel(modelo1);
+        System.out.println(PFNA);
     }
     
     
@@ -242,7 +244,7 @@ public class VentanaPFNA extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPFNA(elementos).setVisible(true);
+                new VentanaPFNA(elementos, PFNA).setVisible(true);
             }
         });
     }

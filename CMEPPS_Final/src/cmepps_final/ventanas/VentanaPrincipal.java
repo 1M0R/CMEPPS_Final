@@ -19,9 +19,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      * Creates new form VentanaPrincipal
      */
     static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
-    public VentanaPrincipal(ArrayList<Elemento> elementos) {
+    static int PFNA = 0;
+    static int totalCar = 0;
+    
+    public VentanaPrincipal() {
         initComponents();
-        this.elementos = elementos;
     }
 
     /**
@@ -74,6 +76,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         menuElementos.add(itemCaracteristicas);
 
         itemPFA.setText("Cálculo PFA");
+        itemPFA.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemPFAActionPerformed(evt);
+            }
+        });
         menuElementos.add(itemPFA);
 
         jMenuBar1.add(menuElementos);
@@ -110,14 +117,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void itemPFNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPFNAActionPerformed
         // TODO add your handling code here:
-        VentanaPFNA vpfna = new VentanaPFNA(elementos);
+        VentanaPFNA vpfna = new VentanaPFNA(elementos, PFNA);
         vpfna.setVisible(true);
         vpfna.setLocationRelativeTo(null);
     }//GEN-LAST:event_itemPFNAActionPerformed
 
     private void itemCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCaracteristicasActionPerformed
         // TODO add your handling code here:
+        VentanaCaracteristicasGenerales vce = new VentanaCaracteristicasGenerales(totalCar);
+        vce.setVisible(true);
+        vce.setLocationRelativeTo(null);
     }//GEN-LAST:event_itemCaracteristicasActionPerformed
+
+    private void itemPFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPFAActionPerformed
+        // TODO add your handling code here:
+        VentanaPFA vpfa= new VentanaPFA(PFNA, totalCar);
+        vpfa.setVisible(true);
+        vpfa.setLocationRelativeTo(null);
+        System.out.println(PFNA);
+    }//GEN-LAST:event_itemPFAActionPerformed
 
     /**
      * @param args the command line arguments
@@ -149,7 +167,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaPrincipal(elementos).setVisible(true);
+                new VentanaPrincipal().setVisible(true);
             }
         });
     }
