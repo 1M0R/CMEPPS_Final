@@ -6,6 +6,7 @@
 package cmepps_final.ventanas;
 
 import cmepps_final.variabs.Elemento;
+import static cmepps_final.ventanas.VentanaElementos.elementos;
 import static java.lang.Integer.parseInt;
 import java.util.ArrayList;
 import javax.swing.WindowConstants;
@@ -39,11 +40,12 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
         else
         {
             Elemento e = new Elemento(textNombre.getText(), parseInt(textEntradas.getText()), 
-                     parseInt(textEntradas2.getText()), 0,
+                     0, parseInt(textEntradas2.getText()),
                     0, (String) comboTipo.getSelectedItem());
             
             elementos.add(e);
         }
+       
         
         
         
@@ -215,6 +217,7 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
                 labelSalidas2.setVisible(false);
                 textSalidas2.setVisible(false);
                 textSalidas2.setText("");
+                
                 break;
             case "CE":
                 labelEntradas.setVisible(true);

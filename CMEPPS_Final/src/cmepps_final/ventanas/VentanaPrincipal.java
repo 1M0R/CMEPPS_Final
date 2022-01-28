@@ -110,6 +110,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void itemPFNAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPFNAActionPerformed
         // TODO add your handling code here:
+        VentanaPFNA vpfna = new VentanaPFNA(elementos);
+        vpfna.setVisible(true);
+        vpfna.setLocationRelativeTo(null);
     }//GEN-LAST:event_itemPFNAActionPerformed
 
     private void itemCaracteristicasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemCaracteristicasActionPerformed

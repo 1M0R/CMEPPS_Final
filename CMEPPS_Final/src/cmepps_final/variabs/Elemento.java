@@ -75,6 +75,70 @@ public class Elemento {
         this.tipo = tipo;
     }
     
+    public String getComplejidad() {
+        String complejidad="";
+        switch(tipo){
+            case "EE":
+                complejidad = calcularEntrada();
+                break;
+            case "SE":
+                complejidad = calcularSalida();
+                break;
+            case "CE":
+                complejidad = calcularCE();
+                break;
+            case "FLE":
+                complejidad = calcularFL();
+                break;
+            case "FLI":
+                complejidad = calcularFL();
+                break;
+        }
+        
+        return complejidad;
+    }
+        
+    public String calcularEntrada(){
+        if ((nFichRefEntradas <= 1 && nDatosEntradas <= 15) || (nFichRefEntradas == 2 && nDatosEntradas <=4))
+                    return "SIMPLE";
+                else if((nFichRefEntradas>=3 && nDatosEntradas >=5) || (nFichRefEntradas ==2 && nDatosEntradas >=16))
+                    return "COMPLEJA";
+                else return "MEDIA";
+    }
+    
+    public String calcularSalida(){
+        if ((nFichRefEntradas <= 1 && nDatosEntradas <= 19) || (nFichRefEntradas <= 3  && nDatosEntradas <=5))
+                    return "SIMPLE";
+                else if((nFichRefEntradas>=4 && nDatosEntradas >=6) || (nFichRefEntradas >=2 && nDatosEntradas >=20))
+                    return "COMPLEJA";
+                else return "MEDIA";
+    }
+    
+    public String calcularCE(){
+        String complejidadSalida = "";
+        if ((nFichRefSalidas <= 1 && nDatosSalidas <= 19) || (nFichRefSalidas <= 3  && nDatosSalidas <=5))
+                    complejidadSalida = "SIMPLE";
+                else if((nFichRefSalidas>=4 && nDatosSalidas >=6) || (nFichRefSalidas >=2 && nDatosSalidas >=20))
+                    complejidadSalida = "COMPLEJA";
+                else complejidadSalida = "MEDIA";
+        
+        String complejidadEntrada = calcularEntrada();
+        if (complejidadEntrada == "COMPLEJA" || complejidadSalida == "COMPLEJA")
+            return "COMPLEJA";
+        else if (complejidadEntrada == "MEDIA" || complejidadSalida == "MEDIA")
+            return "MEDIA";
+        else return "SIMPLE";
+                
+    }
+    
+    public String calcularFL()
+    {
+        if ((nFichRefEntradas <= 1 && nDatosEntradas <= 50) || (nFichRefEntradas <= 5  && nDatosEntradas <=19))
+                    return "SIMPLE";
+                else if((nFichRefEntradas>=6 && nDatosEntradas >=20) || (nFichRefEntradas >=2 && nDatosEntradas >=51))
+                    return "COMPLEJA";
+                else return "MEDIA";
+    }
     
     
     
