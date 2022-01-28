@@ -199,6 +199,13 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
     private void buttonInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInsertarActionPerformed
         // TODO add your handling code here:
         insertarElemento();
+        this.setVisible(false);
+        this.dispose();
+        VentanaElementos ve = new VentanaElementos(elementos);
+        ve.setVisible(true);
+        ve.setLocationRelativeTo(null);
+        
+        
     }//GEN-LAST:event_buttonInsertarActionPerformed
 
     

@@ -47,7 +47,6 @@ public class VentanaISBGS extends javax.swing.JFrame {
         label_PF_Dur = new javax.swing.JLabel();
         Igual1 = new javax.swing.JLabel();
         label_resultado_Duracion = new javax.swing.JLabel();
-        Mensaje = new javax.swing.JLabel();
         PFNA_texto = new javax.swing.JLabel();
         FA_texto = new javax.swing.JLabel();
         label_Calcular = new javax.swing.JButton();
@@ -66,31 +65,53 @@ public class VentanaISBGS extends javax.swing.JFrame {
         labelFA = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setMinimumSize(new java.awt.Dimension(500, 400));
+        getContentPane().setLayout(null);
 
         Esfuerzo_texto.setText("Esfuerzo =");
+        getContentPane().add(Esfuerzo_texto);
+        Esfuerzo_texto.setBounds(50, 160, 80, 14);
 
         label_PF_Esf.setText("00");
+        getContentPane().add(label_PF_Esf);
+        label_PF_Esf.setBounds(170, 160, 30, 14);
 
         label_EE.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         label_EE.setText("E");
+        getContentPane().add(label_EE);
+        label_EE.setBounds(210, 150, 50, 13);
 
         Igual.setText("=");
+        getContentPane().add(Igual);
+        Igual.setBounds(250, 160, 8, 14);
 
         label_resultado_Esfuerzo.setText("00'00");
+        getContentPane().add(label_resultado_Esfuerzo);
+        label_resultado_Esfuerzo.setBounds(270, 160, 50, 14);
 
         Duracion_texto.setText("Duración =");
+        getContentPane().add(Duracion_texto);
+        Duracion_texto.setBounds(50, 200, 90, 14);
 
         label_PF_Dur.setText("00");
+        getContentPane().add(label_PF_Dur);
+        label_PF_Dur.setBounds(170, 200, 30, 14);
 
         Igual1.setText("=");
+        getContentPane().add(Igual1);
+        Igual1.setBounds(250, 200, 8, 14);
 
         label_resultado_Duracion.setText("00'00");
-
-        Mensaje.setText("Por favor, introduzca los siguientes datos: ");
+        getContentPane().add(label_resultado_Duracion);
+        label_resultado_Duracion.setBounds(270, 200, 50, 14);
 
         PFNA_texto.setText("PFNA:");
+        getContentPane().add(PFNA_texto);
+        PFNA_texto.setBounds(50, 80, 50, 14);
 
         FA_texto.setText("FA:");
+        getContentPane().add(FA_texto);
+        FA_texto.setBounds(50, 100, 30, 20);
 
         label_Calcular.setText("Calcular");
         label_Calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -98,10 +119,16 @@ public class VentanaISBGS extends javax.swing.JFrame {
                 label_CalcularActionPerformed(evt);
             }
         });
+        getContentPane().add(label_Calcular);
+        label_Calcular.setBounds(160, 250, 110, 23);
 
         jLabel1.setText("horas");
+        getContentPane().add(jLabel1);
+        jLabel1.setBounds(320, 160, 27, 14);
 
         jLabel2.setText("horas");
+        getContentPane().add(jLabel2);
+        jLabel2.setBounds(320, 200, 40, 14);
 
         labelComboBox_esf.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MF", "MR", "PC", "Multi", "3GL", "4GL", "GenAp", "Mantenimiento", "Nuevo", "MF-3GL", "MF-4GL", "MF-GenAp", "MR-3GL", "MR-4GL", "PC-3GL", "PC-4GL", "Multi-3GL", "Multi-4GL", "MF-3GL-Mantenimineto" }));
         labelComboBox_esf.addActionListener(new java.awt.event.ActionListener() {
@@ -109,6 +136,8 @@ public class VentanaISBGS extends javax.swing.JFrame {
                 labelComboBox_esfActionPerformed(evt);
             }
         });
+        getContentPane().add(labelComboBox_esf);
+        labelComboBox_esf.setBounds(350, 160, 102, 20);
 
         labelComboBox_dur.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "PC", "Multi", "4GL", "Nuevo", "PC-4GL", "Multi-4GL", "PC-4GL-Nuevo", "Multi-4GL-Nuevo" }));
         labelComboBox_dur.addActionListener(new java.awt.event.ActionListener() {
@@ -116,162 +145,45 @@ public class VentanaISBGS extends javax.swing.JFrame {
                 labelComboBox_durActionPerformed(evt);
             }
         });
+        getContentPane().add(labelComboBox_dur);
+        labelComboBox_dur.setBounds(350, 200, 102, 20);
 
         label_CD.setText("C");
+        getContentPane().add(label_CD);
+        label_CD.setBounds(110, 200, 70, 14);
 
         jLabel3.setText("x");
+        getContentPane().add(jLabel3);
+        jLabel3.setBounds(160, 160, 6, 14);
 
         label_CE.setText("C");
+        getContentPane().add(label_CE);
+        label_CE.setBounds(110, 160, 70, 14);
 
         jLabel4.setText("x");
+        getContentPane().add(jLabel4);
+        jLabel4.setBounds(160, 200, 10, 14);
 
         label_ED.setFont(new java.awt.Font("Tahoma", 0, 10)); // NOI18N
         label_ED.setText("E");
+        getContentPane().add(label_ED);
+        label_ED.setBounds(210, 190, 60, 10);
 
         jLabel5.setText("        ");
+        getContentPane().add(jLabel5);
+        jLabel5.setBounds(351, 86, 24, 14);
 
         jLabel6.setText("     ");
+        getContentPane().add(jLabel6);
+        jLabel6.setBounds(190, 310, 15, 14);
 
         labelPFNA.setText("0");
+        getContentPane().add(labelPFNA);
+        labelPFNA.setBounds(100, 80, 49, 14);
 
         labelFA.setText("0");
-
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(52, 52, 52)
-                        .addComponent(Mensaje))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(label_ED, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(170, 170, 170)
-                        .addComponent(label_Calcular))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(190, 190, 190)
-                        .addComponent(jLabel6))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addGap(50, 50, 50)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(Esfuerzo_texto)
-                                .addGap(13, 13, 13)
-                                .addComponent(label_CE)
-                                .addGap(17, 17, 17)
-                                .addComponent(jLabel3)
-                                .addGap(14, 14, 14)
-                                .addComponent(label_PF_Esf)
-                                .addGap(6, 6, 6)
-                                .addComponent(label_EE)
-                                .addGap(14, 14, 14)
-                                .addComponent(Igual)
-                                .addGap(11, 11, 11)
-                                .addComponent(label_resultado_Esfuerzo)
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel1)
-                                .addGap(18, 18, 18)
-                                .addComponent(labelComboBox_esf, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(Duracion_texto, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGap(20, 20, 20)
-                                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(label_CD, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(10, 10, 10)
-                                .addComponent(label_PF_Dur)
-                                .addGap(26, 26, 26)
-                                .addComponent(Igual1)
-                                .addGap(11, 11, 11)
-                                .addComponent(label_resultado_Duracion)
-                                .addGap(9, 9, 9)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(10, 10, 10)
-                                .addComponent(labelComboBox_dur, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(PFNA_texto)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(FA_texto)
-                                .addGap(23, 23, 23)))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(labelPFNA, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(labelFA, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(170, 170, 170)
-                        .addComponent(jLabel5)))
-                .addGap(72, 72, 72))
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(34, 34, 34)
-                .addComponent(Mensaje)
-                .addGap(9, 9, 9)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(PFNA_texto)
-                    .addComponent(labelPFNA))
-                .addGap(3, 3, 3)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(3, 3, 3)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(FA_texto)
-                                    .addComponent(labelFA)))
-                            .addComponent(jLabel5))
-                        .addGap(51, 51, 51)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(Esfuerzo_texto))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(12, 12, 12)
-                                .addComponent(label_CE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel3))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(label_PF_Esf))
-                            .addComponent(label_EE)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(Igual))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(label_resultado_Esfuerzo))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(10, 10, 10)
-                                .addComponent(jLabel1))))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(92, 92, 92)
-                        .addComponent(labelComboBox_esf, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(18, 18, 18)
-                .addComponent(label_ED, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Duracion_texto)
-                    .addComponent(jLabel4)
-                    .addComponent(label_CD)
-                    .addComponent(label_PF_Dur)
-                    .addComponent(Igual1)
-                    .addComponent(label_resultado_Duracion)
-                    .addComponent(jLabel2)
-                    .addComponent(labelComboBox_dur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addComponent(label_Calcular)
-                .addGap(35, 35, 35)
-                .addComponent(jLabel6))
-        );
+        getContentPane().add(labelFA);
+        labelFA.setBounds(100, 100, 54, 20);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -285,13 +197,15 @@ public class VentanaISBGS extends javax.swing.JFrame {
         double FA = 0.65 + (VentanaPrincipal.totalCar *0.01);
         labelFA.setText(FA+"");
                        
-        PF = VentanaPrincipal.PFNA * VentanaPrincipal.FA; 
-        
+        PF = VentanaPrincipal.PFNA * FA; 
+        PF = Math.round(PF * 100.0) / 100.0;
         //de int a string
         String PF_texto = PF+"";      
         
         label_PF_Esf.setText(PF_texto);   
         label_PF_Dur.setText(PF_texto);
+        
+        
     }
     
      private void actualizarTipoEsfuerzo(){
@@ -435,11 +349,11 @@ public class VentanaISBGS extends javax.swing.JFrame {
         //esfuerzo = C * PF^E
         elev1 = Math.pow(PF, EE);
         esfuerzo = CE * elev1;
-                
+        esfuerzo = Math.round(esfuerzo * 100.0) / 100.0;   
         //duracion = C * PF^E
         elev2 = Math.pow(PF, ED);
         duracion = CD * elev2;
-        
+        duracion = Math.round(duracion * 100.0) / 100.0;   
         //las convierto a texto
         esf_txt = esfuerzo+"";
         dur_txt = duracion+"";
@@ -503,7 +417,6 @@ public class VentanaISBGS extends javax.swing.JFrame {
     private javax.swing.JLabel FA_texto;
     private javax.swing.JLabel Igual;
     private javax.swing.JLabel Igual1;
-    private javax.swing.JLabel Mensaje;
     private javax.swing.JLabel PFNA_texto;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -180,6 +180,8 @@ public class VentanaElementos extends javax.swing.JFrame {
         VentanaInsertarElemento vie = new VentanaInsertarElemento(elementos);
         vie.setVisible(true);
         vie.setLocationRelativeTo(null);
+        this.setVisible(false);
+        this.dispose();
     }//GEN-LAST:event_buttonInsertarActionPerformed
 
     private void buttonBorrarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonBorrarActionPerformed
