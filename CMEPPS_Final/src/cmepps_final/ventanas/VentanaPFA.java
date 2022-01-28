@@ -27,9 +27,10 @@ public class VentanaPFA extends javax.swing.JFrame {
         label_PFNA_valor.setText(PFNA+"");
         label_SVA_variable.setText(SVA+"");
         double FA = 0.65 + (0.01 * SVA);
+        VentanaPrincipal.FA = FA;
         label_FA_resultado.setText(FA+"");
         label_FA_en_PFA.setText(FA+"");
-        double PFA = FA * 0.65;
+        double PFA = FA * PFNA;
         label_PFNA_en_PFA.setText(PFNA+"");
         label_resultado_PFA.setText(PFA+"");
         
@@ -66,7 +67,7 @@ public class VentanaPFA extends javax.swing.JFrame {
 
         label_FA_resultado.setText("0.65");
 
-        label_PFNA_en_PFA.setText("0");
+        label_PFNA_en_PFA.setText("PFNA");
 
         PFNA_texto.setText("PFNA =");
 
@@ -80,7 +81,7 @@ public class VentanaPFA extends javax.swing.JFrame {
 
         label_resultado_PFA.setText("0.00");
 
-        label_FA_en_PFA.setText("0.65");
+        label_FA_en_PFA.setText("FA");
 
         igual_PFA.setText("=");
 

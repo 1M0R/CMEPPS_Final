@@ -21,6 +21,24 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
         this.totalCar = totalCar;
+        jComboBox1.setSelectedIndex(VentanaPrincipal.influencias[0]);
+        jComboBox2.setSelectedIndex(VentanaPrincipal.influencias[1]);
+        jComboBox3.setSelectedIndex(VentanaPrincipal.influencias[2]);
+        jComboBox4.setSelectedIndex(VentanaPrincipal.influencias[3]);
+        jComboBox5.setSelectedIndex(VentanaPrincipal.influencias[4]);
+        jComboBox6.setSelectedIndex(VentanaPrincipal.influencias[5]);
+        jComboBox7.setSelectedIndex(VentanaPrincipal.influencias[6]);
+        jComboBox8.setSelectedIndex(VentanaPrincipal.influencias[7]);
+        jComboBox9.setSelectedIndex(VentanaPrincipal.influencias[8]);
+        jComboBox10.setSelectedIndex(VentanaPrincipal.influencias[9]);
+        jComboBox11.setSelectedIndex(VentanaPrincipal.influencias[10]);
+        jComboBox12.setSelectedIndex(VentanaPrincipal.influencias[11]);
+        jComboBox13.setSelectedIndex(VentanaPrincipal.influencias[12]);
+        jComboBox14.setSelectedIndex(VentanaPrincipal.influencias[13]);
+        
+        calcularCaracteristicas();
+        
+        
     }
 
     /**
@@ -233,6 +251,7 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     
+    
     public void calcularCaracteristicas(){
         int total =  Integer.parseInt( (String) jComboBox1.getSelectedItem()) + 
                 Integer.parseInt( (String) jComboBox2.getSelectedItem()) + 
@@ -258,58 +277,85 @@ public class VentanaCaracteristicasGenerales extends javax.swing.JFrame {
     private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
         // TODO add your handling code here:
         calcularCaracteristicas();
+        VentanaPrincipal.influencias[0] = jComboBox1.getSelectedIndex();
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jComboBox2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox2ActionPerformed
         calcularCaracteristicas();       // TODO add your handling code here:
+        VentanaPrincipal.influencias[1] =  jComboBox2.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox2ActionPerformed
 
     private void jComboBox3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox3ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+    VentanaPrincipal.influencias[2] =  jComboBox3.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox3ActionPerformed
 
     private void jComboBox4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox4ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+            VentanaPrincipal.influencias[3] =  jComboBox4.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox4ActionPerformed
 
     private void jComboBox5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox5ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[4] =  jComboBox5.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox5ActionPerformed
 
     private void jComboBox6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox6ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[5] =  jComboBox6.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox6ActionPerformed
 
     private void jComboBox7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox7ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[6] =  jComboBox7.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox7ActionPerformed
 
     private void jComboBox8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox8ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[7] = jComboBox8.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox8ActionPerformed
 
     private void jComboBox9ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox9ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[8] = jComboBox9.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox9ActionPerformed
 
     private void jComboBox10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox10ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[9] = jComboBox10.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox10ActionPerformed
 
     private void jComboBox11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox11ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[10] =  jComboBox11.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox11ActionPerformed
 
     private void jComboBox12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox12ActionPerformed
     calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[11] =  jComboBox12.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox12ActionPerformed
 
     private void jComboBox13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox13ActionPerformed
         calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[12] = jComboBox13.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox13ActionPerformed
 
     private void jComboBox14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox14ActionPerformed
         calcularCaracteristicas();        // TODO add your handling code here:
+        VentanaPrincipal.influencias[13] =  jComboBox14.getSelectedIndex();
+
     }//GEN-LAST:event_jComboBox14ActionPerformed
 
     /**

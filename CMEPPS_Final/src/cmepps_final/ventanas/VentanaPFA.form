@@ -110,7 +110,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_PFNA_en_PFA">
       <Properties>
-        <Property name="text" type="java.lang.String" value="0"/>
+        <Property name="text" type="java.lang.String" value="PFNA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="PFNA_texto">
@@ -145,7 +145,7 @@
     </Component>
     <Component class="javax.swing.JLabel" name="label_FA_en_PFA">
       <Properties>
-        <Property name="text" type="java.lang.String" value="0.65"/>
+        <Property name="text" type="java.lang.String" value="FA"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="igual_PFA">

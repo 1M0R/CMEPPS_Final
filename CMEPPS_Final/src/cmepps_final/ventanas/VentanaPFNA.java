@@ -70,50 +70,49 @@ public class VentanaPFNA extends javax.swing.JFrame {
         Object O[]=null;
         
         modelo1.addRow(O);
-        modelo1.setValueAt("EE (x3)", 0, 0);
+        modelo1.setValueAt("EE (x3,4,6)", 0, 0);
         modelo1.setValueAt(nTipoComplejidadPFNA("EE", "SIMPLE"), 0, 1);
         modelo1.setValueAt(nTipoComplejidadPFNA("EE", "MEDIA"), 0, 2);
         modelo1.setValueAt(nTipoComplejidadPFNA("EE", "COMPLEJA"), 0, 3);
         
-        int totalEE  = nTipoComplejidadPFNA("EE", "SIMPLE") + nTipoComplejidadPFNA("EE", "MEDIA") + nTipoComplejidadPFNA("EE", "COMPLEJA");
-        totalEE*=3;
+        int totalEE  = nTipoComplejidadPFNA("EE", "SIMPLE")*3 + nTipoComplejidadPFNA("EE", "MEDIA")*4 + nTipoComplejidadPFNA("EE", "COMPLEJA")*6;
+        
         modelo1.setValueAt(totalEE, 0, 4);
         
         modelo1.addRow(O);
-        modelo1.setValueAt("SE (x4)", 1, 0);
+        modelo1.setValueAt("SE (x4,5,7)", 1, 0);
         modelo1.setValueAt(nTipoComplejidadPFNA("SE", "SIMPLE"), 1, 1);
         modelo1.setValueAt(nTipoComplejidadPFNA("SE", "MEDIA"), 1, 2);
         modelo1.setValueAt(nTipoComplejidadPFNA("SE", "COMPLEJA"), 1, 3);
-        int totalSE  = nTipoComplejidadPFNA("SE", "SIMPLE") + nTipoComplejidadPFNA("SE", "MEDIA") + nTipoComplejidadPFNA("SE", "COMPLEJA");
-        totalSE*=4;
+        int totalSE  = nTipoComplejidadPFNA("SE", "SIMPLE")*4 + nTipoComplejidadPFNA("SE", "MEDIA")*5 + nTipoComplejidadPFNA("SE", "COMPLEJA")*7;
+        
         modelo1.setValueAt(totalSE, 1, 4);
         
         modelo1.addRow(O);
-        modelo1.setValueAt("CE (x3)", 2, 0);
+        modelo1.setValueAt("CE (x7,10,15)", 2, 0);
         modelo1.setValueAt(nTipoComplejidadPFNA("CE", "SIMPLE"), 2, 1);
         modelo1.setValueAt(nTipoComplejidadPFNA("CE", "MEDIA"), 2, 2);
         modelo1.setValueAt(nTipoComplejidadPFNA("CE", "COMPLEJA"), 2, 3);
-        int totalCE  = nTipoComplejidadPFNA("CE", "SIMPLE") + nTipoComplejidadPFNA("CE", "MEDIA") + nTipoComplejidadPFNA("CE", "COMPLEJA");
-        totalCE*=3;
+        int totalCE  = nTipoComplejidadPFNA("CE", "SIMPLE")*7 + nTipoComplejidadPFNA("CE", "MEDIA")*10 + nTipoComplejidadPFNA("CE", "COMPLEJA")*15;
+        
         modelo1.setValueAt(totalCE, 2, 4);
         
         modelo1.addRow(O);
-        modelo1.setValueAt("FLI (x7)", 3, 0);
+        modelo1.setValueAt("FLI (x5,7,10)", 3, 0);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLI", "SIMPLE"), 3, 1);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLI", "MEDIA"), 3, 2);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLI", "COMPLEJA"), 3, 3);
-        int totalFLI  = nTipoComplejidadPFNA("FLI", "SIMPLE") + nTipoComplejidadPFNA("FLI", "MEDIA") + nTipoComplejidadPFNA("FLI", "COMPLEJA");
-        totalFLI*=7;
+        int totalFLI  = nTipoComplejidadPFNA("FLI", "SIMPLE")*5 + nTipoComplejidadPFNA("FLI", "MEDIA")*7 + nTipoComplejidadPFNA("FLI", "COMPLEJA")*10;
+        
         modelo1.setValueAt(totalFLI, 3, 4);
         
         
         modelo1.addRow(O);
-        modelo1.setValueAt("FLE (x5)", 4, 0);
+        modelo1.setValueAt("FLE (x3,4,6)", 4, 0);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLE", "SIMPLE"), 4, 1);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLE", "MEDIA"), 4, 2);
         modelo1.setValueAt(nTipoComplejidadPFNA("FLE", "COMPLEJA"), 4, 3);
-        int totalFLE  = nTipoComplejidadPFNA("FLE", "SIMPLE") + nTipoComplejidadPFNA("FLE", "MEDIA") + nTipoComplejidadPFNA("FLE", "COMPLEJA");
-        totalFLE*=5;
+        int totalFLE  = nTipoComplejidadPFNA("FLE", "SIMPLE")*3 + nTipoComplejidadPFNA("FLE", "MEDIA")*4 + nTipoComplejidadPFNA("FLE", "COMPLEJA")*6;
         modelo1.setValueAt(totalFLE, 4, 4);
         
         modelo1.addRow(O);

@@ -198,6 +198,10 @@ public class VentanaElementos extends javax.swing.JFrame {
     }//GEN-LAST:event_buttonActualizarActionPerformed
 
     
+    public void getPFNA(){
+        
+    }
+    
     
  
     /**

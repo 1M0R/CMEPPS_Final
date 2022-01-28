@@ -6,6 +6,7 @@
 package cmepps_final.ventanas;
 
 import cmepps_final.variabs.Elemento;
+import static cmepps_final.ventanas.VentanaPFNA.elementos;
 import java.util.ArrayList;
 import javax.swing.WindowConstants;
 
@@ -21,11 +22,38 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     static ArrayList<Elemento> elementos = new ArrayList<Elemento>();
     static int PFNA = 0;
     static int totalCar = 0;
+    static double FA = 0;
+    static int[] influencias = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
     
     public VentanaPrincipal() {
         initComponents();
+        
     }
+    
+    
+    public int calcularPFNA()
+    {
+        int totalEE  = nTipoComplejidadPFNA("EE", "SIMPLE")*3 + nTipoComplejidadPFNA("EE", "MEDIA")*4 + nTipoComplejidadPFNA("EE", "COMPLEJA")*6;
+        int totalSE  = nTipoComplejidadPFNA("SE", "SIMPLE")*4 + nTipoComplejidadPFNA("SE", "MEDIA")*5 + nTipoComplejidadPFNA("SE", "COMPLEJA")*7;
+        int totalCE  = nTipoComplejidadPFNA("CE", "SIMPLE")*7 + nTipoComplejidadPFNA("CE", "MEDIA")*10 + nTipoComplejidadPFNA("CE", "COMPLEJA")*15;
+        int totalFLI  = nTipoComplejidadPFNA("FLI", "SIMPLE")*5 + nTipoComplejidadPFNA("FLI", "MEDIA")*7 + nTipoComplejidadPFNA("FLI", "COMPLEJA")*10;
+        int totalFLE  = nTipoComplejidadPFNA("FLE", "SIMPLE")*3 + nTipoComplejidadPFNA("FLE", "MEDIA")*4 + nTipoComplejidadPFNA("FLE", "COMPLEJA")*6;
+        PFNA = totalCE+totalEE+totalFLE+totalFLI+totalSE;
+        return PFNA;
+    }
+    
 
+    public int nTipoComplejidadPFNA(String tipo, String complejidad)
+    {
+        int n = 0;
+        for (int i = 0; i < elementos.size(); i++) {
+            if (elementos.get(i).getTipo() == tipo && elementos.get(i).getComplejidad() == complejidad)
+            {
+                n++;
+            }
+        }
+        return n;
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -41,6 +69,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         itemPFNA = new javax.swing.JMenuItem();
         itemCaracteristicas = new javax.swing.JMenuItem();
         itemPFA = new javax.swing.JMenuItem();
+        VentanaISBGS = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -83,6 +112,14 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
         menuElementos.add(itemPFA);
 
+        VentanaISBGS.setText("ISBGS");
+        VentanaISBGS.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VentanaISBGSActionPerformed(evt);
+            }
+        });
+        menuElementos.add(VentanaISBGS);
+
         jMenuBar1.add(menuElementos);
 
         setJMenuBar(jMenuBar1);
@@ -95,7 +132,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 270, Short.MAX_VALUE)
+            .addGap(0, 272, Short.MAX_VALUE)
         );
 
         pack();
@@ -131,11 +168,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
     private void itemPFAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemPFAActionPerformed
         // TODO add your handling code here:
-        VentanaPFA vpfa= new VentanaPFA(PFNA, totalCar);
+        VentanaPFA vpfa= new VentanaPFA(calcularPFNA(), totalCar);
         vpfa.setVisible(true);
         vpfa.setLocationRelativeTo(null);
-        System.out.println(PFNA);
     }//GEN-LAST:event_itemPFAActionPerformed
+
+    private void VentanaISBGSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VentanaISBGSActionPerformed
+        // TODO add your handling code here:
+        VentanaISBGS vi= new VentanaISBGS(calcularPFNA());
+        vi.setVisible(true);
+        vi.setLocationRelativeTo(null);
+    }//GEN-LAST:event_VentanaISBGSActionPerformed
 
     /**
      * @param args the command line arguments
@@ -173,6 +216,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem VentanaISBGS;
     private javax.swing.JMenuItem itemCaracteristicas;
     private javax.swing.JMenuItem itemListado;
     private javax.swing.JMenuItem itemPFA;

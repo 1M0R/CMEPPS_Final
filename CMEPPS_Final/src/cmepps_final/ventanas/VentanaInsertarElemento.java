@@ -199,9 +199,10 @@ public class VentanaInsertarElemento extends javax.swing.JFrame {
     private void buttonInsertarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_buttonInsertarActionPerformed
         // TODO add your handling code here:
         insertarElemento();
-        
     }//GEN-LAST:event_buttonInsertarActionPerformed
 
+    
+    
     private void actualizarTipo() {
         String tipo = (String) comboTipo.getSelectedItem();
         switch (tipo) {

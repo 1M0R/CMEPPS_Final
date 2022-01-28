@@ -14,15 +14,19 @@ import javax.swing.WindowConstants;
 public class VentanaISBGS extends javax.swing.JFrame {
     double PF; 
     String PFNA_txt, FA_txt;
+    static int PFNA;
     double CE, EE, CD, ED;
     String CE_txt, EE_txt, CD_txt, ED_txt;
     
     /**
      * Creates new form VentanaISBGS
      */
-    public VentanaISBGS() {
+    public VentanaISBGS(int PFNA) {
         initComponents();
         this.setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
+        this.PFNA = PFNA;
+        labelPFNA.setText(PFNA+"");
+        labelFA.setText(0.65 + (VentanaPrincipal.totalCar *0.01)+"");
     }
 
     /**
@@ -46,8 +50,6 @@ public class VentanaISBGS extends javax.swing.JFrame {
         Mensaje = new javax.swing.JLabel();
         PFNA_texto = new javax.swing.JLabel();
         FA_texto = new javax.swing.JLabel();
-        label_PFNA_introducir = new javax.swing.JTextField();
-        label_FA_introducir = new javax.swing.JTextField();
         label_Calcular = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -60,6 +62,8 @@ public class VentanaISBGS extends javax.swing.JFrame {
         label_ED = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        labelPFNA = new javax.swing.JLabel();
+        labelFA = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -87,20 +91,6 @@ public class VentanaISBGS extends javax.swing.JFrame {
         PFNA_texto.setText("PFNA:");
 
         FA_texto.setText("FA:");
-
-        label_PFNA_introducir.setText("        ");
-        label_PFNA_introducir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                label_PFNA_introducirActionPerformed(evt);
-            }
-        });
-
-        label_FA_introducir.setText("        ");
-        label_FA_introducir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                label_FA_introducirActionPerformed(evt);
-            }
-        });
 
         label_Calcular.setText("Calcular");
         label_Calcular.addActionListener(new java.awt.event.ActionListener() {
@@ -142,6 +132,10 @@ public class VentanaISBGS extends javax.swing.JFrame {
 
         jLabel6.setText("     ");
 
+        labelPFNA.setText("0");
+
+        labelFA.setText("0");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -151,18 +145,6 @@ public class VentanaISBGS extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(52, 52, 52)
                         .addComponent(Mensaje))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(PFNA_texto)
-                        .addGap(10, 10, 10)
-                        .addComponent(label_PFNA_introducir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(87, 87, 87)
-                        .addComponent(FA_texto)
-                        .addGap(25, 25, 25)
-                        .addComponent(label_FA_introducir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(220, 220, 220)
-                        .addComponent(jLabel5))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(190, 190, 190)
                         .addComponent(label_ED, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -210,7 +192,21 @@ public class VentanaISBGS extends javax.swing.JFrame {
                                 .addGap(9, 9, 9)
                                 .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(10, 10, 10)
-                                .addComponent(labelComboBox_dur, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addComponent(labelComboBox_dur, javax.swing.GroupLayout.PREFERRED_SIZE, 102, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(87, 87, 87)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(PFNA_texto)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(FA_texto)
+                                .addGap(23, 23, 23)))
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(labelPFNA, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(labelFA, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(170, 170, 170)
+                        .addComponent(jLabel5)))
                 .addGap(72, 72, 72))
         );
         layout.setVerticalGroup(
@@ -218,22 +214,22 @@ public class VentanaISBGS extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(Mensaje)
-                .addGap(6, 6, 6)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(3, 3, 3)
-                        .addComponent(PFNA_texto))
-                    .addComponent(label_PFNA_introducir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(9, 9, 9)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(PFNA_texto)
+                    .addComponent(labelPFNA))
+                .addGap(3, 3, 3)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(3, 3, 3)
-                                .addComponent(FA_texto))
-                            .addComponent(label_FA_introducir, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                    .addComponent(FA_texto)
+                                    .addComponent(labelFA)))
                             .addComponent(jLabel5))
-                        .addGap(48, 48, 48)
+                        .addGap(51, 51, 51)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(10, 10, 10)
@@ -279,28 +275,17 @@ public class VentanaISBGS extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void label_PFNA_introducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_label_PFNA_introducirActionPerformed
-        // TODO add your handling code here:
-        
-    }//GEN-LAST:event_label_PFNA_introducirActionPerformed
-
-    private void label_FA_introducirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_label_FA_introducirActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_label_FA_introducirActionPerformed
  
     private void calculoPF(){
         //PF = PFNA * FA
         //PFNA y FA los extraigo de Ventana PFA
                 
         //de string a int
-        PFNA_txt = label_PFNA_introducir.getText();
-        int PFNA_num = Integer.parseInt(PFNA_txt);
-        
-        FA_txt = label_FA_introducir.getText();
-        int FA_num = Integer.parseInt(FA_txt);
-                        
-        PF = PFNA_num * FA_num; 
+        labelPFNA.setText(VentanaPrincipal.PFNA+"");
+        double FA = 0.65 + (VentanaPrincipal.totalCar *0.01);
+        labelFA.setText(FA+"");
+                       
+        PF = VentanaPrincipal.PFNA * VentanaPrincipal.FA; 
         
         //de int a string
         String PF_texto = PF+"";      
@@ -507,7 +492,7 @@ public class VentanaISBGS extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new VentanaISBGS().setVisible(true);
+                new VentanaISBGS(PFNA).setVisible(true);
             }
         });
     }
@@ -528,13 +513,13 @@ public class VentanaISBGS extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JComboBox<String> labelComboBox_dur;
     private javax.swing.JComboBox<String> labelComboBox_esf;
+    private javax.swing.JLabel labelFA;
+    private javax.swing.JLabel labelPFNA;
     private javax.swing.JLabel label_CD;
     private javax.swing.JLabel label_CE;
     private javax.swing.JButton label_Calcular;
     private javax.swing.JLabel label_ED;
     private javax.swing.JLabel label_EE;
-    private javax.swing.JTextField label_FA_introducir;
-    private javax.swing.JTextField label_PFNA_introducir;
     private javax.swing.JLabel label_PF_Dur;
     private javax.swing.JLabel label_PF_Esf;
     private javax.swing.JLabel label_resultado_Duracion;
